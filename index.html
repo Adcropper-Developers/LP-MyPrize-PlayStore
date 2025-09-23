@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./dynamic-lp/images/favicon.png" type="image/x-icon" />
+
+  <meta charset="UTF-8" />
+  <title>MyPrize US - Bet together with friends, for free!</title>
+  <meta name="description"
+    content="Join the action on MyPrize US, free to play social casino that lets you battle against your friends and win big, get daily free GC and enjoy the endless fun" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <!-- Swiper CSS -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  </noscript>
+  <!-- Styles -->
+  <link rel="stylesheet" href="./dynamic-lp/css/reset.css" />
+  <link rel="stylesheet" href="./dynamic-lp/css/general.css" />
+  <link rel="stylesheet" href="./dynamic-lp/css/style.css" />
+  <link rel="stylesheet" href="./dynamic-lp/css/queries.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    function isWebPSupported() {
+      var elem = document.createElement('canvas');
+      return !!(elem.getContext && elem.getContext('2d').drawImage && elem.toDataURL('image/webp').indexOf('data:image/webp') === 0);
+    }
+
+    if (isWebPSupported()) {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('webp-supported');
+      });
+    } else {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('webp-not-supported');
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loader-container">
+    <div id="loader"></div>
+  </div>
+  <!-- NAVBAR START -->
+  <header>
+    <nav class="container">
+      <a href="#" id="logo">
+        <img src="./dynamic-lp/images/footer-logo.svg" alt="My Prize Logo" />
+      </a>
+      <div id="nav-links" class="flex-gap-2"></div>
+    </nav>
+  </header>
+  <!-- NAVBAR END -->
+  <main>
+    <section style="height: 100vh" class="section1">
+      <div class="container">
+        <div class="text-container"></div>
+      </div>
+        <div class="video-container"></div>
+    </section>
+
+    <section id="section2">
+      <div class="section2-layer-blur"></div>
+      <div class="container">
+        <div class="text-container">
+        </div>
+        <div class="green-layer-blur-mobile"></div>
+        <div class="green-layer-blur-2-mobile"></div>
+        <!-- DESKTOP PACKAGES -->
+
+        <div class="packages-wrapper">
+        </div>
+
+        <!-- MOBILE PACKAGES -->
+        <div class="packages-wrapper-mobile">
+          <div class="swiper">
+            <div class="swiper-wrapper"></div>
+            <!-- Add Navigation Arrows -->
+            <div class="swiper-button-prev custom-nav-btn">
+              <svg width="15" height="25" viewBox="0 0 15 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.8118 25C13.4131 25 13.9477 24.8046 14.3486 24.4137C15.2171 23.6319 15.2171 22.2638 14.3486 21.4821L5.19488 12.4919L14.3486 3.56678C15.2171 2.78502 15.2171 1.41694 14.3486 0.635179C13.5468 -0.211726 12.1437 -0.211726 11.3419 0.635179L0.651447 11.0586C-0.21715 11.8404 -0.21715 13.2085 0.651447 13.9902L11.3419 24.4137C11.7428 24.8046 12.2773 25 12.8118 25Z"
+                  fill="#F7D74D" />
+              </svg>
+            </div>
+            <div class="swiper-button-next custom-nav-btn">
+              <svg width="15" height="25" viewBox="0 0 15 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.1882 25C1.58686 25 1.05234 24.8046 0.651448 24.4137C-0.217149 23.6319 -0.217149 22.2638 0.651448 21.4821L9.80512 12.4919L0.651448 3.56678C-0.217149 2.78502 -0.217149 1.41694 0.651448 0.635179C1.45323 -0.211726 2.85635 -0.211726 3.65813 0.635179L14.3486 11.0586C15.2171 11.8404 15.2171 13.2085 14.3486 13.9902L3.65813 24.4137C3.25724 24.8046 2.72272 25 2.1882 25Z"
+                  fill="#F7D74D" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="card-cta-2" id="section2Cta"></a>
+      </div>
+    </section>
+
+    <!-- RANKS SECTION -->
+    <section id="section3">
+      <div class="container">
+        <div class="rewards-container">
+          <div class="text-container">
+            <p class="rewards-title"></p>
+            <p class="rewards-description"></p>
+          </div>
+          <!-- <div class="ranks-grid"></div> -->
+          <div class="ranks-container">
+            <div class="ranks-first-part">
+              <div class="rank novice">
+                <h3>Novice</h3>
+                <div class="rank-line"></div>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/novice.png" draggable="false" />
+                </div>
+              </div>
+              <div class="rank rookie">
+                <h3>Rookie</h3>
+                <div class="rank-line"></div>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/rookie.png" draggable="false" />
+                </div>
+              </div>
+              <div class="rank amateur">
+                <h3>Amateur</h3>
+                <div class="rank-line"></div>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/amateur.png" draggable="false" />
+                </div>
+              </div>
+              <div class="rank intiate">
+                <h3>Intiate</h3>
+                <div class="rank-line"></div>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/intiate.png" draggable="false" />
+                </div>
+              </div>
+              <div class="rank apprentice">
+                <h3>Apprentice</h3>
+                <div class="rank-line"></div>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/apprentice.png" draggable="false" />
+                </div>
+              </div>
+            </div>
+            <div class="ranks-second-part">
+              <div class="rank enthusiast">
+                <h3>Enthusiast</h3>
+                <div class="rank-line"></div>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/enthusiast.png" draggable="false" />
+                </div>
+              </div>
+              <div class="rank expert">
+                <h3>Expert</h3>
+                <div class="rank-line"></div>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/expert.png" draggable="false" />
+                </div>
+              </div>
+              <div class="rank highroller">
+                <h3>High Roller</h3>
+                <div class="rank-line"></div>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/highroller.png" draggable="false" />
+                </div>
+              </div>
+              <div class="rank pro">
+                <h3>Pro</h3>
+                <div class="rank-line"></div>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/pro.png" draggable="false" />
+                </div>
+              </div>
+              <div class="rank ace">
+                <h3>Ace</h3>
+                <div class="rank-circle">
+                  <img src="./dynamic-lp/images/ace.png" draggable="false" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="card-cta-2" href="#"> </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAROUSEL  SECTION -->
+    <section class="section4" id="section4">
+      <div class="container">
+        <!-- DESKTOP CAROUSEL -->
+        <div class="carousel-container">
+          <div class="carousel"></div>
+        </div>
+
+        <!-- mobile carousel -->
+        <div class="carousel-container-mobile">
+          <div class="carousel-mobile"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAMES SECTION -->
+    <section id="section5">
+      <div class="container">
+        <div class="games-container">
+          <div class="text-container">
+            <p class="rewards-title"></p>
+          </div>
+          <div class="swipe-container">
+            <img src="./dynamic-lp/images/swipe_icon.svg" class="swipe" draggable="false" alt="swipe icon" />
+          </div>
+          <div class="games-grid"></div>
+          <div style="display: flex; justify-content: center">
+            <a class="card-cta-2" href="#"> </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROOMS SECTION -->
+    <section id="section6">
+      <div class="container">
+        <div class="section6-text-container">
+          <p class="title"></p>
+          <p class="description">
+            Play Together with streamers and our community. <br />
+            Follow your favorite streamer and join in on the excitement!
+          </p>
+        </div>
+        <div class="rooms-grid">
+          <div class="room">
+            <!-- ROOM LABEL -->
+            <p class="value-deal">
+              <span>ROOM1</span>
+            </p>
+            <div class="room-content">
+              <div class="room-text-container">
+                <div class="room-name-container">
+                  <!-- ROOM AVATAR -->
+                  <img src="https://platform-lp-assets.prod.myprize.io/dynamic-lp/room_avatars/mrcelantv_avatar.webp
+                    " alt="" />
+                  <!-- ROOM USERNAME -->
+                  <p class="room-name">Storm</p>
+                </div>
+              </div>
+              <!-- ROOM USER AVATAR -->
+              <a class="secondary-cta" href="#">Join </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZEUS -  - VIDEO -->
+    <section class="section7">
+      <div class="mp-background"></div>
+      <div class="container">
+        <div class="text-container7"></div>
+        <div class="anim-container7">
+        </div>
+      </div>
+    </section>
+
+    <!-- Map - UFO - ROCKET VIDEO -->
+    <section class="section8">
+      <div class="container">
+        <div class="text-container8"></div>
+      </div>
+      <div class="video-container8"></div>
+    </section>
+
+    <!-- Review Section -->
+    <section style="height: auto" id="section9" class="section9">
+      <h1></h1>
+      <div class="review-container">
+        <div class="review-track"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile Scroll Modal -->
+  <div id="mobile-scroll-modal" class="mobile-scroll-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn">&times;</button>
+      <div class="platform"></div>
+      <div class="modal-items-wrapper">
+        <div class="plus-lighter"></div>
+        <div class="coins"></div>
+        <div class="gift-bottom"></div>
+        <div class="gift-head"></div>
+        <div class="strawberry"></div>
+        <div class="slot"></div>
+        <div class="heart"></div>
+        <div class="heart-sm"></div>
+        <div class="dark-lighter"></div>
+        <div class="grapes"></div>
+        <div class="coin2"></div>
+        <div class="coin3"></div>
+        <div class="coin4"></div>
+        <div class="coin5"></div>
+        <div class="coin6"></div>
+        <div class="coin7"></div>
+        <div class="coin8"></div>
+      </div>
+      <div class="modal-content-container">
+        <h1></h1>
+        <p>
+
+        </p>
+
+        <div class="modal-buttons">
+          <a href="#" class="card-cta-2">JOIN NOW
+            <div class="background">
+              <div class="particles"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Footer -->
+  <div id="mobile-sticky-footer" class="mobile-sticky-footer">
+    <div class="sticky-footer-content">
+      <div class="footer-text">
+        <p>
+        </p>
+      </div>
+      <a href="#" class="card-cta-2">JOIN NOW<div class="background">
+          <div class="particles"></div>
+        </div></a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="height: auto" class="container">
+      <div class="left-side">
+        <img class="logo" src="./dynamic-lp/images/footer-logo.svg" alt="" />
+        <p>You must be 18+ to register or log into this platform.</p>
+        <p><b>© 2025 MyPrize.us | All Rights Reserved.</b></p>
+      </div>
+      <div class="right-side">
+        <div>
+          <!-- Policy links will be dynamically inserted here -->
+        </div>
+        <picture>
+          <source type="image/webp" srcset="./dynamic-lp/images/footer-icons.webp" />
+          <source type="image/png" srcset="./dynamic-lp/images/footer-icons.png" />
+          <img loading="lazy" class="footer-icons" src="./dynamic-lp/images/footer-icons.png" alt="footer-icons"
+            draggable="false" />
+        </picture>
+        <div>
+          <!-- Resources links will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script type="module" src="./dynamic-lp/js/config.js"></script>
+
+<script type="module" src="./dynamic-lp/js/sectionManager.js"></script>
+<!-- <script type="module" src="./dynamic-lp/js/sectionManager.min.js"></script> -->
+<script type="module" src="./dynamic-lp/js/mobile-ui.min.js"></script>
+
+</html>

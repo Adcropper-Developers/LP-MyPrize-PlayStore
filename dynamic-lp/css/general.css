@@ -1,0 +1,326 @@
+.container,
+.container-fluid {
+  --gutter-x: 1.5rem;
+  --gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1320px;
+}
+
+main {
+  background: linear-gradient(to bottom, #041830 0%, #0150ab 43%, #041830 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+html,
+* {
+  user-select: none
+}
+
+main {
+  overflow: hidden
+}
+
+body {
+  background-color: #022251
+}
+
+#loader-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(180deg, #072548 50%, #005bc3 100%);
+  will-change: opacity;
+  opacity: 1;
+  transition: opacity 0.5s;
+  touch-action: none;
+  pointer-events: none;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+#loader-container.hide {
+  display: none;
+}
+#loader-container.hide #loader::before,
+#loader-container.hide #loader::after {
+  animation: none;
+}
+
+#loader-container.show-always.hide {
+  display: flex !important;
+}
+#loader-container.hide #loader::before,
+#loader-container.hide #loader::after {
+  animation: none;
+}
+
+
+#loader {
+  width: 50px;
+  aspect-ratio: 1;
+  color: #ffffff;
+  position: relative;
+}
+
+#loader::before, 
+#loader-container.hide #loader::before {
+  background-image: radial-gradient(farthest-side at top left, currentColor 96%, #0000), radial-gradient(farthest-side at top right, currentColor 96%, #0000), radial-gradient(farthest-side at bottom right, currentColor 96%, #0000), radial-gradient(farthest-side at bottom left, currentColor 96%, #0000);
+  will-change: inset;
+  animation: l40-1 1s infinite;
+}
+
+#loader::after, 
+#loader-container.hide #loader::after {
+  background-image: radial-gradient(farthest-side at top left, #0000 94%, currentColor 96%), radial-gradient(farthest-side at top right, #0000 94%, currentColor 96%), radial-gradient(farthest-side at bottom right, #0000 94%, currentColor 96%), radial-gradient(farthest-side at bottom left, #0000 94%, currentColor 96%);
+  will-change: transform;
+  animation: l40-2 1s infinite;
+}
+
+#loader::before, #loader::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: 25px 25px;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+}
+
+@keyframes l40-1 {
+  0%,
+  10%,
+  90%,
+  100% {
+    inset: 0;
+  }
+
+  40%,
+  60% {
+    inset: -10px;
+  }
+}
+
+@keyframes l40-2 {
+  0%,
+  40% {
+    transform: rotate(0);
+  }
+
+  60%,
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  padding-top: 5rem;
+  position: relative;
+}
+
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+.flex-gap-2 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+#nav-links a#login {
+  font-size: 1.1rem;
+}
+
+.navbar-cta {
+  /* padding: 0.6rem 1.3rem;
+  background-color: oklch(58.08% 0.1785 256.29);
+  border: 2px solid oklch(77.42% 0.1212 247.67);
+  border-radius: 47px;
+  font-family: "Proxima Nova Bold", sans-serif; */
+
+}
+
+.primary-cta.navbar-cta {
+  padding: 1rem 3rem;
+  min-width: unset;
+  font-size: 1.2rem;
+}
+
+.secondary-cta {
+  padding: 0.5rem 1rem;
+  background-color: #FEE901;
+  border: 3px solid black;
+  border-bottom-width: 8px;
+  color: #00449B;
+  border-radius: 47px;
+  font-family: "Proxima Nova Bold", sans-serif;
+}
+
+.primary-cta {
+  width: auto;
+  min-width: 22.5rem;
+  padding: 1rem 0rem;
+  background: linear-gradient(to right, #6432D9, #E7C132, #20A86B, #f582d0, #f582d0, #20A86B, #E7C132, #6432D9) border-box;
+  background-size: 300% 300%;
+  width: fit-content;
+  border-radius: 10px;
+  color: #00449B;
+  font-family: "Organetto Bold", sans-serif;
+  font-weight: 700;
+  filter: drop-shadow(0px 5.32px 3.04px rgba(0, 0, 0, 0.5));
+  font-size: 1.5rem;
+  text-align: center;
+  /* 1.5rem × 0.72 */
+  cursor: pointer;
+  z-index: 30;
+  position: relative;
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation-name: borderAnim;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+.primary-cta .background {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FEE901;
+  border-radius: 5px;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.primary-cta .background .particles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0px -3.08px 9.12px 4.56px #D28914, inset 0px 2px 5.12px 4.56px white;
+  transition: 0.3s;
+}
+
+.primary-cta:hover .background .particles {
+  box-shadow: inset 0px -5.08px 9.12px 4.56px #D28914, inset 0px 5px 7.12px 4.56px white;
+  transition: 0.3s;
+}
+
+.primary-cta .particles::after {
+  content: '';
+  width: 2rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 77%;
+  transform: rotate(15deg);
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+  animation: 1.5s particle-2 linear infinite;
+  animation-play-state: paused;
+}
+
+.primary-cta .particles::before {
+  content: '';
+  width: 3rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 5%;
+  transform: rotate(15deg);
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+  animation: 1.5s particle-1 linear infinite;
+  animation-play-state: paused;
+}
+
+.primary-cta:hover .particles::before {
+  animation-play-state: running;
+}
+
+.primary-cta:hover .particles::after {
+  animation-play-state: running;
+}
+
+@keyframes borderAnim {
+  0% {
+    background-position: 0px 0px;
+  }
+
+  100% {
+    background-position: 3000px 0px;
+  }
+}
+
+@keyframes particle-1 {
+
+  0%,
+  100% {
+    top: 0;
+    left: 5%;
+  }
+
+  85% {
+    left: 125%;
+  }
+
+  85.1% {
+    left: -30%;
+  }
+}
+
+@keyframes particle-2 {
+
+  0%,
+  100% {
+    top: 0;
+    left: 77%;
+  }
+
+  33% {
+    top: 0;
+    left: 125%;
+  }
+
+  33.1% {
+    left: -20%;
+  }
+
+}
+
+.tertiary-cta {
+  font-family: "Work Sans", sans-serif;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: center;
+  padding: 1rem 1.625rem 1rem 1.625rem;
+  background-color: #FEE901;
+  border: 3px solid black;
+  border-bottom-width: 8px;
+  border-radius: 143px;
+  width: 75%;
+  height: 4rem;
+}
