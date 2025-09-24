@@ -3045,7 +3045,7 @@ body.webp-supported .grapes {
 .modal-content-container h1 {
   font-family: "Organetto UltraboldSemiExt", sans-serif;
   color: #fff;
-  font-size: clamp(1.6rem, 6.7vw, 2.5rem);
+  font-size: clamp(1.3rem, 6vw, 2rem);
   -webkit-text-stroke: 1.68px rgba(0, 0, 0, 1);
   text-stroke: 1.68px rgba(0, 0, 0, 1);
   filter: drop-shadow(0px 3.36px 0px rgba(0, 0, 0, 1));
@@ -3144,6 +3144,15 @@ body.webp-supported .grapes {
   margin-bottom: 1rem;
 }
 
+.mobile-scroll-modal .cta-app-store img,
+.mobile-scroll-modal .cta-galaxy-store img,
+.mobile-scroll-modal .cta-play-store img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+  width: 12rem;
+}
+
 .mobile-scroll-modal h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
@@ -3240,6 +3249,16 @@ body.webp-supported .grapes {
   animation-name: heartbeatFooter;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+}
+
+.footer-cta .cta-app-store img, 
+.footer-cta .cta-galaxy-store img, 
+.footer-cta .cta-play-store img {
+    width: 9rem;
+}
+
+.footer-cta .mobile-site {
+  display: none;
 }
 
 @keyframes heartbeatFooter {
