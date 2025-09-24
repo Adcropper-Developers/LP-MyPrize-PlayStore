@@ -108,8 +108,10 @@ class Section1Manager {
     this.textContainer = this.section.querySelector(".text-container");
     this.videoContainer = this.section.querySelector(".video-container");
     this.stickyFooterContent = document.querySelector('.mobile-sticky-footer .footer-text p');
+    this.stickyFooterButton = document.querySelector('.mobile-sticky-footer .footer-cta');
     this.mobileScrollModalTitleContent = document.querySelector('.mobile-scroll-modal h1');
     this.mobileScrollModalSubTitleContent = document.querySelector('.mobile-scroll-modal p');
+    this.mobileScrollModalButtons = document.querySelector('.mobile-scroll-modal .modal-buttons');
     this.sheetId = config[config.status].section1SheetId;
     this.videoLoaded = false;
     this.isMobile = window.innerWidth < 944;
@@ -178,40 +180,47 @@ class Section1Manager {
       </div>
     `;
 
+    let cta = ''
+
     const os = this.getOs();
-    // if (os === 'iOS') {
-      // this.textContainer.innerHTML += `<a class='cta-app-store' href='${data?.appStoreCtaLink}'>
-      //   <img src='./dynamic-lp/images/app_store_badge.svg' />
-      // </a>
-      // <a class='mobile-site' href="${data?.ctaLink}">
-      //   Continue to mobile site
-      // </a>
-      // `;
-    // } else if (os === 'Samsung') {
-    //   this.textContainer.innerHTML += `<a class='cta-galaxy-store' href="${data?.galaxyStoreCtaLink}">
-    //     <img src='./dynamic-lp/images/galaxy_store_badge.svg' />
-    //   </a>
-    //   <a class='mobile-site' href="${data?.ctaLink}">
-    //     Continue to mobile site
-    //   </a>
-    //   `;
-    // } else if (os === 'Android') {
-      this.textContainer.innerHTML += `<a class='cta-play-store' href="${data?.googlePlayStoreCtaLink}">
+/*    if (os === 'iOS') {
+      cta = `<a class='cta-app-store' href='${data?.appStoreCtaLink}'>
+        <img src='./dynamic-lp/images/app_store_badge.svg' />
+      </a>
+      <a class='mobile-site' href="${data?.ctaLink}">
+        Continue to mobile site
+      </a>
+      `;
+    } else if (os === 'Samsung') {
+      cta = `<a class='cta-galaxy-store' href="${data?.galaxyStoreCtaLink}">
+        <img src='./dynamic-lp/images/galaxy_store_badge.svg' />
+      </a>
+      <a class='mobile-site' href="${data?.ctaLink}">
+        Continue to mobile site
+      </a>
+      `;
+    } else if (os === 'Android') { */
+      cta = `<a class='cta-play-store' href="${data?.googlePlayStoreCtaLink}">
         <img src='./dynamic-lp/images/google_play_badge.svg' />
       </a>
       <a class='mobile-site' href="${data?.ctaLink}">
         Continue to mobile site
       </a>
       `;
-    // } else {
-    //   this.textContainer.innerHTML += `<a class='card-cta-2' href='${data?.ctaLink}'>
-    //     ${data.ctaText}
-    //   </a>`;
-    // }
+    /* } else {
+      cta = `<a class='card-cta-2' href='${data?.ctaLink}'>
+        ${data.ctaText}
+      </a>`;
+    } */
+    
+    this.textContainer.innerHTML += cta;
 
     this.stickyFooterContent.innerHTML = `${data.mobileConsentBannerTitle}`;
+    this.stickyFooterButton.innerHTML = cta;
     this.mobileScrollModalTitleContent.innerHTML = `${data.mobilePopUpTitle}`;
+    this.mobileScrollModalButtons.innerHTML = cta;
     this.mobileScrollModalSubTitleContent.innerHTML = "";
+    
     // Start observing for video loading
     this.observer.observe(this.videoContainer);
     // Store data for later use in loadVideo
@@ -223,7 +232,6 @@ class Section1Manager {
 
   getOs() {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    console.log('userAgent', userAgent);
     if (/iPad|iPhone|iPod|Macintosh|Mac OS/.test(userAgent) && !window.MSStream) {
       return "iOS";
     }
