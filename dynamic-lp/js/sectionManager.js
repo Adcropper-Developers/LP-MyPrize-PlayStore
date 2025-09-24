@@ -106,6 +106,8 @@ class Section1Manager {
   constructor() {
     this.section = document.querySelector(".section1");
     this.textContainer = this.section.querySelector(".text-container");
+    this.headerContainer = this.textContainer.querySelector(".header-container");
+    this.cta = this.textContainer.querySelector('.card-cta-2');
     this.videoContainer = this.section.querySelector(".video-container");
     this.stickyFooterContent = document.querySelector('.mobile-sticky-footer .footer-text p');
     this.stickyFooterButton = document.querySelector('.mobile-sticky-footer .footer-cta');
@@ -171,54 +173,15 @@ class Section1Manager {
 
   render(data) {
     // Text container update
-    this.textContainer.innerHTML = `
-      <div class='header-container'>
-        <h1 class='gc-text'>${data.claimTitle}</h1>
-        <h1 class='gc-prize'>${data.gcPrize?.replace('.', ',')}</h1>
-        <h1 class='sc-prize'>${data.scPrize}</h1>
-        <h1 class='sc-text'>${data.scText}</h1>
-      </div>
+    this.headerContainer.innerHTML = `
+      <h1 class='gc-text'>${data.claimTitle}</h1>
+      <h1 class='gc-prize'>${data.gcPrize?.replace('.', ',')}</h1>
+      <h1 class='sc-prize'>${data.scPrize}</h1>
+      <h1 class='sc-text'>${data.scText}</h1>
     `;
-
-    let cta = ''
-
-    const os = this.getOs();
-/*    if (os === 'iOS') {
-      cta = `<a class='cta-app-store' href='${data?.appStoreCtaLink}'>
-        <img src='./dynamic-lp/images/app_store_badge.svg' />
-      </a>
-      <a class='mobile-site' href="${data?.ctaLink}">
-        Continue to mobile site
-      </a>
-      `;
-    } else if (os === 'Samsung') {
-      cta = `<a class='cta-galaxy-store' href="${data?.galaxyStoreCtaLink}">
-        <img src='./dynamic-lp/images/galaxy_store_badge.svg' />
-      </a>
-      <a class='mobile-site' href="${data?.ctaLink}">
-        Continue to mobile site
-      </a>
-      `;
-    } else if (os === 'Android') { */
-      cta = `<a class='cta-play-store' href="${data?.googlePlayStoreCtaLink}">
-        <img src='./dynamic-lp/images/google_play_badge.svg' />
-      </a>
-      <a class='mobile-site' href="${data?.ctaLink}">
-        Continue to mobile site
-      </a>
-      `;
-    /* } else {
-      cta = `<a class='card-cta-2' href='${data?.ctaLink}'>
-        ${data.ctaText}
-      </a>`;
-    } */
-    
-    this.textContainer.innerHTML += cta;
-
+      
     this.stickyFooterContent.innerHTML = `${data.mobileConsentBannerTitle}`;
-    this.stickyFooterButton.innerHTML = cta;
     this.mobileScrollModalTitleContent.innerHTML = `${data.mobilePopUpTitle}`;
-    this.mobileScrollModalButtons.innerHTML = cta;
     this.mobileScrollModalSubTitleContent.innerHTML = "";
     
     // Start observing for video loading
@@ -291,6 +254,7 @@ class Section1Manager {
     }
   }
 }
+
 
 
 class Section7Manager {
